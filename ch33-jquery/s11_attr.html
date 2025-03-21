@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query</title>
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        // jQuery 사용: 문서가 로드되면 실행
+        $(function() {
+
+            // 하나의 속성 제어
+            $('img').attr('width',function(index){
+                // index : 배열의 인덱스
+                return (index + 1) * 100;
+            });
+
+            // 복수의 속성 제어
+            $('img').attr({
+                width:function(index){
+                return (index + 1) * 100;
+            },
+                height:function(index){
+                    return (index + 1) * 100;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+  <img src ="../files/blue.jpg">
+  <img src ="../files/flower.jpg">
+  <img src ="../files/winter.jpg">
+</body>
+</html>

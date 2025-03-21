@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파일 읽기</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            // 파일을 선택할 때
+            document.getElementById('file').onchange = function () {
+                const file = this.files[0];
+                if (file) {
+                    alert(file.name + '을 선택했습니다.');
+                    console.log('선택된 파일:', file.name);
+                }
+            };
+
+            // 읽기 버튼을 클릭할 때
+            document.getElementById('btnStart').onclick = function () {
+                readProcess();
+            };
+        };
+
+        function readProcess() {
+            const file = document.getElementById('file').files[0];
+
+            if (!file) {
+                alert('파일을 선택하세요!');
+                return;
+            }
+
+            // 파일 정보 표시
+            document.getElementById('filename').textContent = '파일명: ' + file.name;
+            document.getElementById('filesize').textContent = '파일크기: ' + file.size + ' bytes';
+            document.getElementById('filetype').textContent = '파일타입: ' + file.type;
+            document.getElementById('filedate').textContent = '마지막 수정일: ' + file.lastModifiedDate.toLocaleString();
+
+            // 인코딩 정보 읽기
+            const encodeList = document.getElementById('encoding');
+            let encoding = encodeList.value;
+
+            const reader = new FileReader();
+
+            // 선택한 파일을 읽어서 문자열로 저장
+            reader.readAsText(file, encoding);
+
+            reader.onload = function () {
+                const disp = document.getElementById('contents');
+                disp.value = reader.result;
+            };
+
+            reader.onerror = function () {
+                alert('파일을 읽는 도중 오류가 발생했습니다.');
+            };
+        }
+    </script>
+</head>
+<body>
+    <h2>현재 시스템의 파일 읽기</h2>
+    <input type="file" id="file" accept="text/*">
+    <select id="encoding">
+        <option value="EUC-KR">EUC-KR</option>
+        <option value="UTF-8">UTF-8</option>
+    </select>
+    <button id="btnStart">읽기</button>
+    <br>
+    <div>
+        <span id="filename">파일명: </span><br>
+        <span id="filesize">파일크기: </span><br>
+        <span id="filetype">파일타입: </span><br>
+        <span id="filedate">마지막 수정일: </span>
+    </div>
+    <textarea id="contents" rows="10" cols="50" readonly="readonly"></textarea>
+</body>
+</html>

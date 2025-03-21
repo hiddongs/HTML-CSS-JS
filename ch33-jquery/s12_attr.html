@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query</title>
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        // jQuery 사용: 문서가 로드되면 실행
+        $(function() {
+
+            // 3초 후에 이미지 경로 출력 
+            setTimeout(function(){
+
+                let src = $('img').attr('src');
+                alert(src);
+
+            },3000);
+           
+        });
+    </script>
+</head>
+<body>
+  <img src ="../files/blue.jpg">
+</body>
+</html>

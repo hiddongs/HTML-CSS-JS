@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+
+        window.onload = function(){
+            const save = document.getElementById('save');
+            const load = document.getElementById('load');
+
+            save.onclick=function(){
+                const text = document.getElementById('text');
+
+                // localStorage.setItem('name',text,value);
+                localStorage.name = text.value;
+
+                text.value ='';
+        } 
+
+        load.onlclick=function(){
+            // 로컬 스토리지에 저장된 데이터 읽기
+            // let loadedName = localStorage.getItem('Name');
+
+            let loadedName = localStorage.name;
+            alert('localStorage 객체에 저장된 이름 : ' + loadedName);
+        }
+    }
+    </script>
+</head>
+<body>
+    <input type="text" id="">
+    <button id ="save">저장</button>
+    <button id ="load">불러오기</button>
+</body>
+</html>

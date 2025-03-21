@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+        변수명의 정의
+        1. 키워드(예약어)를 사용하면 안됨
+        2. 숫자로 시작하면 안됨
+        3. 특수문자는 _와 $만 허용
+        4. 공백 문자를 포함할 수 없음
+
+        식별자를 잘못 지정한 예
+
+        break(키워드)
+        10alpha(숫자로 시작)
+        #num (특수문자 사용)
+        has space(공백 사용)
+
+        */
+
+        // 변수 선언
+        var num;
+
+        // 변수에 값을 할당
+        num = 123;
+
+        document.write(num);
+        document.write('<br>');
+
+        var num2 = 4567;
+
+
+
+        document.write('num2 = ' + num2);
+        document.write('<br>');
+
+
+        var a,b;
+        a = 10;
+        b = 5;
+
+        document.write('a + b = ' + (a + b));
+        document.write('<br>');
+
+        // 변수 선언과 초기화를 동시에
+        var c =10, d= 3.5;
+        document.write('c + d = ' + (c + d));
+        document.write('<br>');
+
+        document.write('c + d = ' + (c + d));
+        document.write('<br>');
+
+        var 번호 = 3;
+        document.write('번호 = ' + 번호);
+        document.wrtie('<br>');
+
+
+        // 변수 선언하지 않고 출력 
+        // alert(num3);
+
+        //변수 선언 후 값을 할당하지 않고 출력
+
+        // undifined로 출력, 오류는 발생 x
+
+        
+    </script>
+    
+</body>
+</html>

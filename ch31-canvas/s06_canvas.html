@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas 그림자 효과</title>
+    <script>
+        window.onload = function(){
+            const canvas = document.getElementById('canvas');
+            if(canvas.getContext){
+
+                const ctx = canvas.getContext('2d');
+
+                // 🔹 1. 기본 그림자 (검은색, 흐림 효과 없음)
+                ctx.shadowColor = "black";
+                ctx.shadowOffsetX = 10;
+                ctx.shadowOffsetY = 10;
+                ctx.shadowBlur = 0;
+                ctx.fillStyle = "blue";
+                ctx.fillRect(20, 20, 100, 100);
+
+                // 🔹 2. 흐림 효과 있는 그림자
+                ctx.shadowColor = "rgba(0, 0, 0, 0.5)";
+                ctx.shadowOffsetX = 15;
+                ctx.shadowOffsetY = 15;
+                ctx.shadowBlur = 15;
+                ctx.fillStyle = "red";
+                ctx.fillRect(150, 20, 100, 100);
+
+                // 🔹 3. 여러 색상의 그림자
+                ctx.shadowColor = "rgba(255, 0, 0, 0.8)"; // 빨간 그림자
+                ctx.shadowOffsetX = -10;
+                ctx.shadowOffsetY = 10;
+                ctx.shadowBlur = 10;
+                ctx.fillStyle = "green";
+                ctx.fillRect(280, 20, 100, 100);
+
+                // 🔹 4. 텍스트 그림자 효과
+                ctx.shadowColor = "purple";
+                ctx.shadowOffsetX = 5;
+                ctx.shadowOffsetY = 5;
+                ctx.shadowBlur = 8;
+                ctx.font = "bold 30px Arial";
+                ctx.fillStyle = "white";
+                ctx.fillText("Shadow Effect", 50, 200);
+
+            } else {
+                alert('브라우저가 캔버스를 지원하지 않습니다');
+            }
+        }
+    </script>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="300"></canvas>
+</body>
+</html>

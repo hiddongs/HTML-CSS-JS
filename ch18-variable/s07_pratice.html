@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습</title>
+</head>
+<body>
+    <script type ="text/javascript">
+
+
+    /*
+     [문제] 
+     음식점에서 국수를 주문하는데 할인 행사를 해서 한 그릇에 20% 할인 해준다. 
+     국수 값은 3,500이고
+     국수 값과 주문할 수량을 입력해서 지불 금액을 출력하시오.
+     
+     [입력 예시]
+     prompt로 입력 - 국수값, 국수 수량 입력
+
+     [출력 예시]
+     지불 금액 : 14000원
+     
+
+    */
+
+        var noodle = parseFloat(prompt('국수 값을 입력하세요', '값'));
+        var a = parseInt(prompt('국수 수량을 입력하세요', '수량'));
+
+        var discount = noodle * (1 - 0.2);
+        
+        var result = a * discount;
+        document.write('총 결제 금액 = ' + result.toFixed(2) + '원<br>');
+
+
+    </script>
+</body>
+</html>

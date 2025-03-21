@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위, 바위, 보 게임</title>
+    <link rel="stylesheet" href="../css/jquery-ui.min.css">
+
+    <!-- jQuery 로드 -->
+    <script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+
+    <!-- jQuery UI 로드 -->
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+
+            $('.user-option').click(function () {
+
+            })
+            // user가 선택한 값
+            let suer_answer = $(this).attr('id').substr(3);
+
+            let com_answer = Math.floor(Math.random() * 3);
+
+            let result;
+            let num = com_answer - user_answer;
+            if (num == -2 || num == 1) {
+                result = ['승', '패'];
+            } else if (num == -1 || num == 2) {
+                result = ['패', '승'];
+            }
+            else {
+                result = ['무', '무'];
+            }
+
+            $('.result-img img').attr('src', function (index) {
+                if (index == 0) { // 컴퓨터
+                    return '../files/timg' + com_answer + '.png';
+                }
+                else { // 사용자자
+                    return '../files/timg' + user_answer + '.png';
+                }
+
+            }).show();
+
+            $('.result-img span').text(function (index) {
+                return (index == 0 ? '컴퓨터' : '사용자')
+
+                // $(".user_option").click(function () {
+                //     let userChoice = $(this).attr("id"); // 사용자가 선택한 가위, 바위, 보
+                //     let choices = ["timg0.png", "timg1.png", "timg2.png"]; // 가위, 바위, 보 이미지
+                //     let comChoice = Math.floor(Math.random() * 3); // 랜덤으로 0, 1, 2 중 하나 선택
+
+                //     $("#user_img").attr("src", "../files/" + choices[parseInt(userChoice.replace("img", ""))]).show();
+                //     $("#com_img").attr("src", "../files/" + choices[comChoice]).show();
+
+                //     let resultText = "";
+                //     if (userChoice === "img" + comChoice) {
+                //         resultText = "무승부!";
+                //     } else if (
+                //         (userChoice === "img0" && comChoice === 2) ||
+                //         (userChoice === "img1" && comChoice === 0) ||
+                //         (userChoice === "img2" && comChoice === 1)
+                //     ) {
+                //         resultText = "사용자 승리!";
+                //     } else {
+                //         resultText = "컴퓨터 승리!";
+                //     }
+
+                //     $(".result-letter").text(resultText);
+                // });
+            });
+        })
+    </script>
+
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Sunflower:300');
+
+        body {
+            font-family: 'Sunflower', sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 700px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        .results {
+            text-align: center;
+            font-weight: bold;
+            font-size: 2.5em;
+            vertical-align: top;
+        }
+
+        .results-img {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .user_option {
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        img {
+            width: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>가위, 바위, 보 게임</h1>
+
+    <table border="1">
+        <tr height="100">
+            <td class="results" width="315">컴퓨터 <span class="result-letter"></span></td>
+            <td class="results" width="315">사용자 <span class="result-letter"></span></td>
+        </tr>
+        <tr height="150">
+            <td class="results-img">
+                <img id="com_img" style="display: none;">
+            </td>
+            <td class="results-img">
+                <img id="user_img" style="display: none;">
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <div>
+        <img class="user_option" id="img0" src="../files/timg0.png" alt="가위">
+        <img class="user_option" id="img1" src="../files/timg1.png" alt="바위">
+        <img class="user_option" id="img2" src="../files/timg2.png" alt="보">
+    </div>
+
+</body>
+
+</html>

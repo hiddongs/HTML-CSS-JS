@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        const array =['가','나','아','하'];
+        document.write(array +'<br>');
+
+        array.sort();
+        document.write(array +'<br>');
+
+        array.reverse();
+        document.write(array +'<br>');
+        document.write('---------------<br>');
+
+        const array2 = [ 52,273,103,32];
+
+        // 숫자 오름차순 정렬
+        array2.sort(function(left,right){
+            return left - right;
+        });
+
+        document.write(array2 +'<br>');
+
+        // 숫자 내림차순 정렬
+
+        array2.sort(function(left,right){
+            return right - left;
+        })
+
+        document.write(array2 + '<br>');
+
+
+
+    </script>
+    
+</body>
+</html>

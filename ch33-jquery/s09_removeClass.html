@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query</title>
+    <style type="text/css">
+        .item {
+            color: red;
+            background-color: yellow;
+        }
+    </style>
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        // jQuery 사용: 문서가 로드되면 실행
+        $(document).ready(function() {
+            // 3초 후에 select 클래스 제거
+            setTimeout(function() {
+                $('.select').removeClass('select'); // 클래스 제거
+            }, 3000);
+        });
+    </script>
+</head>
+<body>
+    <h1 class="item">header - 0</h1>
+    <h1 class="item select">header - 1</h1>
+    <h1 class="item">header - 2</h1>
+</body>
+</html>

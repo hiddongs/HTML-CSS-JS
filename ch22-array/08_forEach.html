@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    /*
+    [문제] 국어, 영어, 수학, 성적을 prompt로 입력 받아서
+    총점, 평균, 등급을 출력하는데 총점(getSum),
+    평균(getAvg), 등급(getGrade)을 구하는 함수를 만들어 사용하자
+    (0 ~ 100) 성적 입력
+
+    */
+
+    var kor = Number(prompt('국어 점수 입력 : ',''));
+    var eng = Number(prompt('영어 점수 입력 : ',''));
+    var mat = Number(prompt('수학 점수 입력 : ',''));
+
+    function getSum(kor, eng, mat){  
+
+       return kor+eng+mat;
+    }
+    function getAvg(kor, eng, mat){
+
+        return  (kor+eng+mat)/3;
+    }
+    function getGrade(kor, eng, mat){
+
+        var avg = getAvg(kor, eng, mat);
+        if(avg >= 90 ){
+            return "A" ;
+        }else if(avg >= 80 ){
+            return "B" ;
+        }else if(avg >= 70 ){
+            return "C";
+        }else if(avg >= 60 ){
+             return "D";
+        }else{
+            return "F";
+        }
+
+    }
+
+    document.write('총점 : '+getSum(kor, eng, mat));
+    document.write('<br>');
+    document.write('평균 : '+getAvg(kor, eng, mat));
+    document.write('<br>');
+    document.write('등급 : '+getGrade(kor, eng, mat));
+   
+    </script>
+</body>
+</html>

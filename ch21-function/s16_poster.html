@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 홍보 페이지</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 배경 스타일 */
+        .background {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: rgb(14, 13, 13);
+            background-repeat: no-repeat;
+            background-size: 60% 100%;
+
+            /* 그라디언트 효과 */
+            background-image: linear-gradient(to right, rgba(14, 13, 13, 1), rgba(14, 13, 13, 0) 50%), 
+                              url('../files/인터스텔라블랙홀.jpg');
+            background-position: left;
+
+            /* 줌인 애니메이션 */
+            animation: zoomBackground 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes zoomBackground {
+            0% { background-size: 70%; }
+            100% { background-size: 80%; }
+        }
+
+        /* 포스터 배경 */
+        .back {
+            width: 40vw;
+            height: 100vh;
+            background-image: url("../files/인터스텔라포스터.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        /* 폰트 적용 */
+        @font-face {
+            font-family: 'Interstella'; 
+            src: url('../files/OPTIBodoni-Antiqua.otf') format('opentype'),
+                 url('../files/OPTIBodoni-Antiqua.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* 텍스트 스타일 */
+        h1 {
+            position: absolute;
+            top: 10%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+            font-family: "Interstella", serif;
+            font-size: 50pt;
+            color: white;
+            font-weight: 400;
+            text-transform: uppercase;
+            text-align: center;
+            animation: glow 2s infinite alternate;
+            text-shadow: 3px 3px 10px rgba(194, 189, 189, 0.8);
+        }
+
+        /* 텍스트 애니메이션 */
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #ffffff, 0 0 10px #b49fb4, 0 0 15px #9c7fa1; }
+            50% { text-shadow: 0 0 10px #ffffff, 0 0 20px #a080a8, 0 0 30px #584c4c; }
+            100% { text-shadow: 0 0 5px #ffffff, 0 0 10px #ccc, 0 0 15px #999; }
+        }
+
+        /* 영화 정보 박스 */
+        .info-box {
+            position: absolute;
+            top: 25%;
+            left: 10%;
+            width: 30%;
+            bottom: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 100px;
+            border-radius: 80px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* 카테고리 컨테이너 */
+        .category-container {
+            display: flex;
+            justify-content: center;
+            gap: 150px;
+        }
+
+        .category {
+            width: 20%;
+            background: #222;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* 카테고리 버튼 */
+        .category-header {
+            padding: 20px;
+            background: #e9e7e7;
+            cursor: pointer;
+            font-size: 18px;
+            border-width: 30px;
+            font-weight: bold;
+            border-bottom: 1px solid #444;
+            transition: background 0.3s ease;
+            text-align: center; 
+        }
+
+        .category-header:hover {
+            background: #444;
+        }
+
+        /* 내용 박스 (초기에는 숨김) */
+        .category-content {
+            max-height: 0; /* 처음에는 높이를 0으로 설정 */
+            overflow: hidden; /* 넘치는 내용 숨김 */
+            transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
+            background: #222;
+            border-top: 1px solid #444;
+            padding: 0 15px; /* 닫힐 때 패딩 제거 */
+        }
+
+        /* 버튼 스타일 */
+        .toggle-button {
+            margin-bottom: 10px;
+            padding: 20px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .toggle-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>INTERSTELLAR</h1>
+
+    <div class="info-box">
+      
+        <div class="category-container">
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory('content1')">🎬 영화</div>
+                <div class="category-content" id="content1">
+                    <p>영화 정보</p>
+                    <p><strong>개봉 :</strong> 2014.11.06</p>
+                    <p><strong>등급 :</strong> 12세 이상 관람가</p>
+                    <p><strong>장르 :</strong> SF</p>
+                    <p><strong>국가 :</strong> 미국, 영국</p>
+                    <p><strong>러닝타임 :</strong> 169분</p>
+                    <p><strong>배급 :</strong> 워너 브러더스 코리아㈜</p>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory('content2')">🎵 음악</div>
+                <div class="category-content" id="content2">
+                    <p>음악</p>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory('content3')">배우</div>
+                <div class="category-content" id="content3">
+                    <p>배우</p>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory('content4')">🎵 음악</div>
+                <div class="category-content" id="content2">
+                    <p>감상평 남기기</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="background">
+        <div class="back"></div>
+    </div>
+
+    <script>
+        let content = document.getElementById(id);
+
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null; // 닫기
+            content.style.padding = "0 15px";
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px"; // 펼치기
+            content.style.padding = "15px";
+}
+    </script>
+
+</body>
+</html>

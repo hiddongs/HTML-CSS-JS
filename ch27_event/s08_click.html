@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload=function(){
+            // div 태그 호출
+            const notice = document.getElementById('notice');
+
+            const radios = document.getElementsByTagName('input');
+            for(let i = 0; i <radios.length;i++){
+                // 이벤트 연결
+                radios[i].onclick=function(){
+                    if(radios[0].checked){
+
+                        // 첫 번쨰 radio button 선택
+
+                        // div 숨기기
+                        notice.style.display = 'none';
+                    }else{
+
+                        // 두 번쨰 radio button 선택
+
+                        // div 표시하기
+                        notice.style.display ='';
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

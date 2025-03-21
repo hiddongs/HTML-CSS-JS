@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        var input = prompt('숫자를 입력하세요','숫자');
+
+        document.write(typeof(input) + ':' + input);
+        document.write('<br>');
+
+        // 데이터가 숫자일 때 정상적으로 형변환이 일어남
+        document.write(input * 10); // 자동 형변환
+        // 데이터가 숫자일 때 정상적으로 형변환이 일어남
+
+        document.write(input * 10); // 자동 형변환
+        document.write('<br>');
+
+        // input이 반환하는 데이터를 string으로 인식하기
+        // 때문에 + 를 사용하면 데이터를 연결해서 새로운
+        // 문자 생성
+        document.write(input * 10); // 자동 형변환
+        document.write('<br>-------------<br>');
+
+        // 형변환
+        // 문자(문자열)을 숫자로 변환환
+        var numberInput = Number(input); // string -> number
+
+        document.write('형 변환 이후<br>');
+        document.write(
+            typeof(numberInput) + ':' + numberInput
+        );
+        document.write('<br>');
+        document.write(numberinput +10);
+
+        
+    </script>
+
+    
+</body>
+</html>

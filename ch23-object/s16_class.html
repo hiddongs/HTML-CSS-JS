@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        class Person{
+            constructor(name){
+                this.name = name;
+            }
+
+            sayHi(){
+                document.write(
+                    'Hi! My name is ' + this.name);
+                
+            }
+
+            // 정적 메서드
+            static sayHello(){
+                document.write('Hello!');
+            }
+        }
+
+        // 인스턴스 생성
+        const me = new Person('Lee');
+        document.write(me.name + '<br>');
+        // 프로토타입 메서드 호출
+        me.sayHi();
+
+        document.write('<br>');
+        Person.sayHello();
+    </script>
+    
+</body>
+</html>

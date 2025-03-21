@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/jquery-ui.min.css">
+
+    <!-- jQuery 로드 -->
+    <script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+
+    <!-- jQuery UI 로드 -->
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // 다이얼로그 초기 설정 (자동으로 열리지 않음)
+            $('#dialog').dialog({
+                resizable: false,  // resizable 속성 오타 수정
+                height: 200,
+                modal: true,
+                autoOpen: false,  // 기본적으로 다이얼로그를 닫아둠
+                buttons: {
+                    'Delete all items': function () {
+                        alert("All items deleted!");
+                        $(this).dialog('close');
+                    },
+                    Cancel: function () {
+                        $(this).dialog('close');
+                    }
+                }
+            });
+
+            // 버튼 클릭 시 다이얼로그 열기
+            $('#opener').click(function () {
+                $('#dialog').dialog('open');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="dialog" title="Basic dialog">
+        <p>
+            This is the default dialog which is useful
+            for displaying information.
+        </p>
+    </div>
+
+    <p>
+        오늘은 날씨가 맑지만 겨울 날씨처럼 춥습니다.
+    </p>
+    <button id="opener">Open Dialog</button>
+</body>
+
+</html>

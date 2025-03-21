@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+    const students = [];
+
+    // 객체를 생성해서 배열에 저장
+    students.push(
+        {이름 : '홍길동', 국어 : 99, 영어 : 88, 수학 : 77, 과학 : 96}
+    );
+    students.push(
+        {이름 : '양강억', 국어 : 23, 영어 : 78, 수학 : 71, 과학 : 90}
+    );
+
+    students.push(
+        {이름 : '양왕장', 국어 : 55, 영어 : 86, 수학 : 73, 과학 : 91}
+    );
+
+    students.push(
+        {이름 : '양장광', 국어 : 73, 영어 : 58, 수학 : 17, 과학 : 21}
+    );
+
+
+    students.push(
+        {이름 : '양광남', 국어 : 59, 영어 : 38, 수학 : 27, 과학 : 56}
+    );
+
+    for(let i in students){
+        // 총점 구하는 메서드 추가
+        students[i].getSum = function(){
+            return this.국어 + this.과학 + this.수학 + this.영어;
+        };
+    
+        // 평균 구하는 메서드 추가
+        students[i].getAverage = function(){
+            return this.getSum()/4;
+        };
+
+        
+    }
+
+    document.write('이름 총점 평균<br>');
+    for(let i in students){
+        document.write(students[i].이름 +','
+            + students[i].getSum() + ','
+            + students[i].getAverage() + '<br>');
+
+         
+    }
+
+
+    </script>
+    
+</body>
+</html>

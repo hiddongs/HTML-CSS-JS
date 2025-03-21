@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+       function Human(age){
+        this.age = age;
+
+       }
+       
+       // 프로토타입으로 정의된 요소만 상속됨
+       Human.prototype.type='사람';
+       Human.prototype.age=20;
+       Human.prototype.getType = function(){
+        return this.type;
+       };
+       Human.prototype.getAge = function(){
+
+          return this.age;
+       };
+       
+
+       const human1 = new Human(20);
+       document.write('human1.type = ' + human1.type + '<br>');
+       document.write('human1.age = ' + human1.age + '<br>');
+       document.write('human1.getType = ' + human1.getType() + '<br>');
+       document.write('human1.getAge = ' + human1.getAge() + '<br>');
+       document.write('---------------------------------------<br>');
+
+       function Student(age){
+        this.age = age;
+       }
+       Student.prototype = Human.prototype;
+
+       // 프로토타입의 생성자를 재정의
+       // (정의하지 않아도 구동상의 문제는 없음)  
+
+       Student.prototype.constructor = Student;
+
+       const student = new Student(40);
+       document.write(
+        'student.type = ' + studnet.type + '<br>');
+       efqefqfeqeqf
+       document.write(
+        'student.getType() = ' + student.getType() + '<br>');
+       
+       document.write(
+        'student.getAge() = ' + student.getAge() + '<br>');
+
+        document.write('-------------------------------<br>');
+        document.write((student instanceof Student) + '<br>');
+       document.write((student instanceof Human) + '<br>');
+       document.write((student instanceof Object) + '<br>');
+       document.write((student instanceof Number) + '<br>');
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 핸들</title>
+    <style type="text/css">
+
+    </style>
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $('#btn1').on('click', function () {
+                // 속도값 fast(200), normal(400), slow(600)
+                $('#dog').show('slow', function () {
+                    alert('노출 완료 !');
+                });
+            })
+
+            $('#btn2').on('click', function () {
+                $('#dog').hide(1000, function () {
+                    alert('숨김 완료');
+                })
+            })
+
+            $('btn3').on('click', function () {
+                $('#dog').toggle('slow');
+            })
+
+        });
+    </script>
+</head>
+
+<body>
+    <button id="btn1">Show</button>
+    <button id="btn2">Hide</button>
+    <button id="btn3">Toggle</button>
+    <br>
+    <img id="dog" src="../files/dog.png" width="120" height="120" style="display:none;">
+</body>
+
+</html>

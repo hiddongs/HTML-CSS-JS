@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 핸들들</title>
+    <style type="text/css">
+        .reverse{
+            background-color: black;
+            color:white;
+        }
+    </style>
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      
+        $(function() {
+
+            // 하나의 이벤트 연결
+            $('h1').on('click',function(){
+                $(this).html(function(index,html){
+                return html + '+';
+            });
+            
+        });
+        // 복수의 이벤트 연결  
+        $('h1').on({
+            mouserover:function(){
+                $(this).addClass('reverse');
+            },
+            mouserout:function(){
+                $(this).removeClass('reverse');
+            }
+        })
+    });
+    </script>
+</head>
+<body>   
+   <h1>Header-0</h1>
+   <h1>Header-1</h1>
+   <h1>Header-2</h1>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type ="text/javascript">
+        /*
+         ES6에 새롭게 추가된 기본 매개변수는 매개변수를 정의할 떄 기본으로 할당될 인자값과 함께 작성하는 매개변수를 의미함
+         값ㅇ
+        */
+
+      function drawChart(width = 200, height=200){
+        document.write(width + ' x ' + height + ' 차트를 그립니다.');
+      }
+
+     drawChart(100);
+     document.write('----------------<br>');
+    </script>
+</body>
+</html>

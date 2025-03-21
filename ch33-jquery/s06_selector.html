@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query</title>
+    <!-- CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        window.onload = function(){
+        // 문서가 준비 완료되면 매개변수로 전달된 함수를 실행
+        $(document).ready(function(){
+      
+        $('input:checked').attr('checked',false);
+        $('input:disabled').attr('클릭할 수 없음');
+        $('input:enabled').val('클릭할 수 있음');
+        });
+
+    }
+    </script>
+
+    
+</head>
+<body>
+
+    <input type="checkbox" name="city" value="서울" checked>서울
+    <input type="button" value="확인" disabled>  
+    <input type="button" value="확인">
+                                         
+
+</body>
+</html>

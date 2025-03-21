@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표 함수t</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+        ES6에서 도입된 화살표 함수 (arrow function)은
+        fcuntion 키워드 대신 화살표(fat arrow => )
+
+
+        1) 매개변수가 하나일 경우에는 인자를 정의할 때
+           괄호를 생략할 수 있음
+        2) 매개변수가 없거나 둘 이상일 경우 괄호를 작성해야 함
+        3) 화살표 함수 코드 블록을 지정하지 않고 한 문장으로 작성시
+           return문을 사용하지 않아도 화살표 오른쪽 표현식의 계산 결과값이 반환됨
+        4) 화살표 함수 코드 블록을 지정했을 경우 반환하고자 하는 값에 return문을 작성해야 함.
+           return문이 없을 시 undefined가 반환됨.
+        */
+
+
+        print(10);
+        document.write('<br>--------<br>');
+
+        // 인자가 하나일 경우 () 생략 가능
+
+        let print2 = x => {
+            return x * 10;
+
+        }
+
+        document.wrtie(print(20));
+        document.write('<br>--------------<br>');
+
+        let add = (x,y) => {return x * y};
+        document.wrtie(add(2,5));
+        document.write('<br>-------------<br>');
+
+        // 중괄호 생략
+        let multi = (x,y) =>
+
+    </script>
+    
+</body>
+</html>

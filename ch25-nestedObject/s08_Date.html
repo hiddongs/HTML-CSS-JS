@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            setInterval(function () {
+                const time = new Date();
+                let hours = time.getHours();
+                let minutes = time.getMinutes();
+                let seconds = time.getSeconds();
+
+                let clock = '';
+                clock += ((hours < 10) ? '0' : '') + hours + ':';
+                clock += ((minutes < 10) ? '0' : '') + minutes + ':';
+                clock += ((seconds < 10) ? '0' : '') + seconds;
+
+                document.getElementById("clock").innerText = clock;
+            }, 1000);
+        };
+    </script>
+</head>
+<body>
+    <h1>현재 시각:</h1>
+    <h2 id="clock">00:00:00</h2>  <!-- 시간을 표시할 태그 추가 -->
+</body>
+</html>

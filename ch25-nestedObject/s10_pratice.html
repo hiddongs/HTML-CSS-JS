@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+
+        /*
+        [실습] 1 ~ 45 까지의 중복되지 않는 6개의 숫자 구하기
+               (includes(값) => 인자로 전달된 값이 배열에 포함 true)
+        [출력예시] 오름차순 정렬
+        */
+        const lottoArray =[];
+        let number  = Math.floor(Math.random() * 46);
+
+        while(lottoArray.length < 6){
+            let number  = Math.floor(Math.random() * 46);
+            if(!lottoArray.includes(num)){
+                number.push(num);
+            }
+        }
+        return lottoArray.sort((a,b) => a-b);
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

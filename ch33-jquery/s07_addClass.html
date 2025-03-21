@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query</title>
+    <style type="text/css">
+        .high_light{
+            background: yellow;
+        }
+    </style>
+    <!-- CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        window.onload = function(){
+        // 문서가 준비 완료되면 매개변수로 전달된 함수를 실행
+        // $(document).ready(function(){
+        $(function(){
+
+            // 클래스 추가
+            $('h1').addClass('high_light');
+
+        
+        });
+
+    }
+    </script>
+</head>
+<body>
+    <h1>item - 0</h1>
+    <h1>item - 1</h1>
+    <h1>item - 2</h1>
+    <h1>item - 3</h1>
+    <h1>item - 4</h1>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+     function Student(name,korean,english,math){
+        this.name = name;
+        this.korean = korean;
+        this.english = english;
+        this.math = math;
+     }
+
+     Student.prototype.getSum = function(){
+        return this.korean + this.english + this.math;
+     }
+     const students =[];
+     students.push(new Student('홍길동', 90,30,20));
+     students.push(new Student('홍길', 80,60,40));
+     students.push(new Student('홍', 70,50,30));
+     
+     for(let i in range){
+          students[i].getSum();
+     }
+   
+
+
+    </script>
+
+    
+</body>
+</html>

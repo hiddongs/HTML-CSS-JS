@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+        window.onload=function(){
+            const canvas = document.getElementById('canvas');
+            if(canvas.getContext){
+                const context = canvas.getContext('2d');
+
+                context.beginPath(); // path 시작
+                context.moveTo(50,50); // 시작점을 옮기는 역할
+                context.lineTo(80,80); // 왼쪽 작은 직선
+
+
+                context.moveTo(140,80);
+                context.lineTo(170,50); // 오른쪽 작은 직선 
+
+                context.moveTo(60,150);
+                context.lineTo(170, 150); // 아래 직선
+
+                context.clostPath();
+
+
+                // 경로에 테두리 표시, 명시하지 않으면 선이 그려지지 않음음
+                context.stroke();
+               
+            }else{
+                alert('브라우저가 캔버스를 지원하지 않습니다');
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

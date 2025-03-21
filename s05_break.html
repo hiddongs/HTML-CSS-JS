@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>break</title>
+</head>
+<body>
+    <script type ="text/javascript">
+
+        for(var i=0; i<5; i++){
+            for(var j=0; j<5; j++){
+                if(j == 3)
+                  break;
+                  
+
+                document.write(i + ',' + j + '<br>');
+                
+            }
+        }
+
+        document.write("-------------<br>");
+        outer_loop:
+        for(var i=0; i<5; i++){
+            for(var j=0; j<5; j++){
+                if(j == 3)
+                 break outer_loop;
+
+                document.write(i + ',' + j + '<br');
+                
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
